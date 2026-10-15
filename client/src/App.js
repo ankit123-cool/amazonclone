@@ -1,6 +1,7 @@
 import "./App.css";
 import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
+import { HashRouter as Router, Route, Switch } from 'react-router-dom';
 import Person2OutlinedIcon from "@mui/icons-material/Person2Outlined";
 import ShoppingCartIcon from "@mui/icons-material/ShoppingCart";
 import { useEffect } from "react";
