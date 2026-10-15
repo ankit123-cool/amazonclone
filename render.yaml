@@ -2,7 +2,7 @@ services:
   # 1. Backend Server
   - type: web
     name: amazon-backend-server
-    env: node
+    runtime: node
     plan: free
     buildCommand: npm install
     startCommand: node index.js
@@ -10,11 +10,13 @@ services:
       - key: NODE_VERSION
         value: 16
 
-statics:
   # 2. Frontend Website 
-  - name: amazon-frontend-web
+  - type: web
+    name: amazon-frontend-web
+    runtime: static
     plan: free
     repo: https://github.com
     publishDirectory: client/build
     buildCommand: cd client && npm install && npm run build
+
 
