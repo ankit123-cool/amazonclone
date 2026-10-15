@@ -1,5 +1,5 @@
 services:
-  # 1. This automatically builds and spins up your Node/Express backend server
+  # 1. Backend Server
   - type: web
     name: amazon-backend-server
     env: node
@@ -10,15 +10,11 @@ services:
       - key: NODE_VERSION
         value: 16
 
-  # 2. This automatically builds and hosts your React frontend
+  # 2. Frontend Website (Fixed Properties)
   - type: web
     name: amazon-frontend-web
     env: static
     plan: free
     repo: https://github.com
-    staticPublishDirectory: client/build
+    publishDirectory: client/build
     buildCommand: cd client && npm install && npm run build
-    routes:
-      - type: rewrite
-        src: /*
-        dest: /index.html
