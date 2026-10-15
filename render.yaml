@@ -10,11 +10,11 @@ services:
       - key: NODE_VERSION
         value: 16
 
-  # 2. Frontend Website (Fixed Properties)
-  - type: web
-    name: amazon-frontend-web
-    env: static
+statics:
+  # 2. Frontend Website 
+  - name: amazon-frontend-web
     plan: free
     repo: https://github.com
     publishDirectory: client/build
     buildCommand: cd client && npm install && npm run build
+
