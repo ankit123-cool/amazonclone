@@ -12,7 +12,7 @@ var cookies = require("cookie-parser");
 
 app.use(cookies());
 mongoose.connect(
-  "mongodb+srv://admin-ak:test123@cluster0.bvj44.mongodb.net/amazonDB",
+  process.env.MONGO_URI,
   { useNewUrlParser: true }
 );
 
